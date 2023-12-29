@@ -1,4 +1,4 @@
-import { _decorator, Component, EventKeyboard, EventTouch, input, Input, instantiate, KeyCode, Node, Prefab, Vec2, Vec3 } from 'cc';
+import { _decorator, Component, EventKeyboard, EventTouch, input, Input, instantiate, KeyCode, macro, Node, Prefab, Vec2, Vec3 } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('Player')
@@ -17,6 +17,7 @@ export class Player extends Component {
 
     onLoad() {
         input.on(Input.EventType.KEY_DOWN, this.fireLaser, this);
+        this.schedule(this.fireLaser, 0.5, macro.REPEAT_FOREVER, 0);
     }
 
     start() {
@@ -31,17 +32,10 @@ export class Player extends Component {
         this.node.setWorldPosition(this.newPos.x, this.newPos.y, 0);
     }
 
-    fireLaser(event: EventKeyboard) {
-        switch (event.keyCode)
-        {
-            case KeyCode.SPACE: 
-            var bullet = instantiate(this.spaceLaser);
-            bullet.setWorldPosition(this.node.getPosition());
-            this.node.parent.addChild(bullet);
-            console.log("FIRED");
-            break;
-        }
-        
+    fireLaser() {
+        var bullet = instantiate(this.spaceLaser);
+        bullet.setWorldPosition(this.node.getPosition());
+        this.node.parent.addChild(bullet); 
     }
 
     public getPlayerLocation() {

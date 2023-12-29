@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.Prefab",
-    "_name": "SpaceLaser",
+    "_name": "Asteroid",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_native": "",
@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "SpaceLaser",
+    "_name": "Asteroid",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": null,
@@ -35,8 +35,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 4.557,
-      "y": -279.551,
+      "x": 221.974,
+      "y": 596.859,
       "z": 0
     },
     "_lrot": {
@@ -48,9 +48,9 @@
     },
     "_lscale": {
       "__type__": "cc.Vec3",
-      "x": 3.072,
-      "y": 3.959,
-      "z": 3.959
+      "x": 0.503,
+      "y": 0.518,
+      "z": 0.594
     },
     "_mobility": 0,
     "_layer": 33554432,
@@ -76,8 +76,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 4,
-      "height": 8
+      "width": 386,
+      "height": 385
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -88,7 +88,7 @@
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "f4irSvqVRAsamS3jH4+R5w"
+    "fileId": "d6Ml18SptLrI+D8KDr+Lwe"
   },
   {
     "__type__": "cc.Sprite",
@@ -113,7 +113,7 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "4c28a8ac-1b43-4f98-86c6-4da1c5c1703d@f9941",
+      "__uuid__": "ad8f4e4d-008d-46c3-9598-8476e787e962@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 0,
@@ -133,10 +133,10 @@
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "82JO0PfHFNkoEYDgNi7o2/"
+    "fileId": "e17uvXF6pEfb8FUw5YB4dH"
   },
   {
-    "__type__": "ef5b3JA22lHJ4WuTjdYyoOS",
+    "__type__": "9ab9bUIV/dGeKadHq8EdJiK",
     "_name": "",
     "_objFlags": 0,
     "__editorExtras__": {},
@@ -147,12 +147,12 @@
     "__prefab": {
       "__id__": 7
     },
-    "laserSpeed": 120,
+    "asteroidSpeed": 100,
     "_id": ""
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "d4HKeUejJNCai9XAtJkwLo"
+    "fileId": "e4xwMnhwRKtaV+7wFhJtb8"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -162,7 +162,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "73sX+rhYxJVIh2hSo1ctlS",
+    "fileId": "2fUA2OD3hJVojV+d0SV1vj",
     "instance": null,
     "targetOverrides": null
   }
