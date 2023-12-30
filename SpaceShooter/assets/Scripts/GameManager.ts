@@ -1,4 +1,4 @@
-import { _decorator, Component, EventTouch, Node, ToggleContainer, input, Input, Vec2, CCInteger, Contact2DType, Collider2D, IPhysics2DContact, RichText, director } from 'cc';
+import { _decorator, Component, EventTouch, Node, ToggleContainer, input, Input, Vec2, CCInteger, Contact2DType, Collider2D, IPhysics2DContact, RichText, director, Vec3 } from 'cc';
 import { Player } from './Player';
 
 const { ccclass, property } = _decorator;
@@ -46,7 +46,9 @@ export class GameManager extends Component {
     )
     private targetScore: number = 100;
 
-    score: number = 0;
+    private score: number = 0;
+    private level: number = 1;
+    private levelOver: boolean = false;
 
     onLoad() {
         input.on(Input.EventType.TOUCH_MOVE, this.changePlayerPos, this);
@@ -59,8 +61,43 @@ export class GameManager extends Component {
     }
 
     update(deltaTime: number) {
-        if (this.score == this.targetScore)
-        this.gameOver();
+        this.levelWin();
+        this.adjustLevelStats();
+    }
+
+    adjustLevelStats() {
+
+        switch(this.level) {
+            case 1: 
+                this.laserSpeed = 200;
+                this.asteroidSpeed = 100;
+                this.targetScore = 20;
+                break;
+            case 2: 
+                this.laserSpeed = 200;
+                this.asteroidSpeed = 150;
+                this.targetScore = 50;
+                break;
+            case 3:
+                this.laserSpeed = 200;
+                this.asteroidSpeed = 200;
+                this.targetScore = 100;
+                break;
+        }
+    }
+
+    levelWin() {
+
+        if (this.level === 3)
+        {
+            if (this.score == this.targetScore)
+                this.gameOver();
+        }
+
+        else if (this.score === this.targetScore)
+            this.levelAdvance();
+
+        
     }
 
     changePlayerPos(event: EventTouch) {
@@ -93,11 +130,23 @@ export class GameManager extends Component {
         this.scoreText.string = String(this.score);
     }
 
-    gameOver()
-    {
+    gameOver() {
         director.loadScene('GameOver');
     }
 
+    resetScore() {
+        this.score = 0;
+        this.scoreText.string = '00';
+    }
+
+    resetPlayer() {
+        this.player.node.position = new Vec3(0, -400, 0);
+    }
+
+    levelAdvance() {
+        this.level++;
+        this.resetScore();
+    }
 }
 
 
