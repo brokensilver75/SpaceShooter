@@ -1,4 +1,4 @@
-import { _decorator, CCInteger, Component, Node, Contact2DType, Collider2D, IPhysics2DContact, RigidBody, RigidBody2D, Game, find } from 'cc';
+import { _decorator, CCInteger, Component, Node, Contact2DType, Collider2D, IPhysics2DContact, RigidBody, RigidBody2D, Game, find, director } from 'cc';
 
 const { ccclass, property } = _decorator;
 
@@ -52,9 +52,7 @@ export class Asteroid extends Component {
 
         if (otherCollider.name === "Player<BoxCollider2D>")
         {
-            setTimeout(() => {
-                otherCollider.node.destroy();
-            }, 1);
+            this.game.gameOver();
         }
 
         

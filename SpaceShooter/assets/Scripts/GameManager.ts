@@ -1,4 +1,4 @@
-import { _decorator, Component, EventTouch, Node, ToggleContainer, input, Input, Vec2, CCInteger, Contact2DType, Collider2D, IPhysics2DContact, RichText } from 'cc';
+import { _decorator, Component, EventTouch, Node, ToggleContainer, input, Input, Vec2, CCInteger, Contact2DType, Collider2D, IPhysics2DContact, RichText, director } from 'cc';
 import { Player } from './Player';
 
 const { ccclass, property } = _decorator;
@@ -30,6 +30,15 @@ export class GameManager extends Component {
     )
     private scoreText: RichText;
 
+    @property (
+        {
+            type: CCInteger,
+            tooltip: 'TargetScore'
+        }
+    )
+    
+    private targetScore: number = 100;
+
     score: number = 0;
 
     onLoad() {
@@ -43,7 +52,8 @@ export class GameManager extends Component {
     }
 
     update(deltaTime: number) {
-        
+        if (this.score == this.targetScore)
+        this.gameOver();
     }
 
     changePlayerPos(event: EventTouch) {
@@ -72,6 +82,10 @@ export class GameManager extends Component {
         this.scoreText.string = String(this.score);
     }
 
+    gameOver()
+    {
+        director.loadScene('GameOver');
+    }
 
 }
 
