@@ -1,5 +1,6 @@
-import { _decorator, Component, EventTouch, Node, ToggleContainer, input, Input, Vec2, CCInteger, Contact2DType, Collider2D, IPhysics2DContact } from 'cc';
+import { _decorator, Component, EventTouch, Node, ToggleContainer, input, Input, Vec2, CCInteger, Contact2DType, Collider2D, IPhysics2DContact, RichText } from 'cc';
 import { Player } from './Player';
+
 const { ccclass, property } = _decorator;
 
 @ccclass('GameManager')
@@ -20,6 +21,16 @@ export class GameManager extends Component {
         }
     )
     private laserSpeed: number;
+
+    @property (
+        {
+            type: RichText,
+            tooltip: 'Score'
+        }
+    )
+    private scoreText: RichText;
+
+    score: number = 0;
 
     onLoad() {
         input.on(Input.EventType.TOUCH_MOVE, this.changePlayerPos, this);
@@ -56,7 +67,12 @@ export class GameManager extends Component {
         return this.laserSpeed;
     }
 
-    
+    addScore() {
+        this.score += 10;
+        this.scoreText.string = String(this.score);
+    }
+
+
 }
 
 

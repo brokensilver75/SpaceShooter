@@ -1,4 +1,5 @@
-import { _decorator, CCInteger, Component, Node, Contact2DType, Collider2D, IPhysics2DContact, RigidBody, RigidBody2D } from 'cc';
+import { _decorator, CCInteger, Component, Node, Contact2DType, Collider2D, IPhysics2DContact, RigidBody, RigidBody2D, Game, find } from 'cc';
+
 const { ccclass, property } = _decorator;
 
 @ccclass('Asteroid')
@@ -11,13 +12,16 @@ export class Asteroid extends Component {
     )
     private asteroidSpeed: number;
 
+    private game;
+
     onLoad() {
         let collider = this.getComponent(Collider2D);
         if (collider)
         {
-            collider.on(Contact2DType.BEGIN_CONTACT, this.onShipContact, this);
-            collider.on(Contact2DType.BEGIN_CONTACT, this.onLaserContact, this);
+            collider.on(Contact2DType.BEGIN_CONTACT, this.onContact, this);
         }  
+        
+        this.game = find("GameManager").getComponent("GameManager");
     }
     
     start() {
@@ -32,22 +36,28 @@ export class Asteroid extends Component {
         }
     }
 
-    onShipContact(selfCollider:Collider2D, otherCollider:Collider2D, contact:IPhysics2DContact | null) {
-        setTimeout(() => {
-            otherCollider.node.destroy();
-        }, 1);
+    onContact(selfCollider:Collider2D, otherCollider:Collider2D, contact:IPhysics2DContact | null) {
 
-    }
+        if (otherCollider.name === "SpaceLaser<BoxCollider2D>")
+        {
+            this.game.addScore();
+            setTimeout(() => {
+                this.node.destroy();
+            }, 1);
+            
+            setTimeout(() => {
+                otherCollider.node.destroy();
+            }, 1);
+        }
 
-    onLaserContact(selfCollider:Collider2D, otherCollider:Collider2D, contact:IPhysics2DContact | null) {
+        if (otherCollider.name === "Player<BoxCollider2D>")
+        {
+            setTimeout(() => {
+                otherCollider.node.destroy();
+            }, 1);
+        }
 
-        setTimeout(() => {
-            this.node.destroy();
-        }, 1);
         
-        setTimeout(() => {
-            otherCollider.node.destroy();
-        }, 1);
     }
 
 
