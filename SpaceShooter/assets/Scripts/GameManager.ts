@@ -1,4 +1,4 @@
-import { _decorator, Component, EventTouch, Node, ToggleContainer, input, Input, Vec2, CCInteger } from 'cc';
+import { _decorator, Component, EventTouch, Node, ToggleContainer, input, Input, Vec2, CCInteger, Contact2DType, Collider2D, IPhysics2DContact } from 'cc';
 import { Player } from './Player';
 const { ccclass, property } = _decorator;
 
@@ -55,6 +55,8 @@ export class GameManager extends Component {
     public getLaserSpeed(): number {
         return this.laserSpeed;
     }
+
+    
 }
 
 

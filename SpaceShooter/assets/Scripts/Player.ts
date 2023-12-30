@@ -15,6 +15,10 @@ export class Player extends Component {
     )
     private spaceLaser: Prefab;
 
+    onCollisionEnter() {
+        
+    }
+
     onLoad() {
         input.on(Input.EventType.KEY_DOWN, this.fireLaser, this);
         this.schedule(this.fireLaser, 0.5, macro.REPEAT_FOREVER, 0);
