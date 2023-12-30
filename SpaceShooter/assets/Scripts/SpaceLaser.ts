@@ -1,16 +1,23 @@
-import { _decorator, CCInteger, Component, Game, Node, Vec2, Vec3 } from 'cc';
+import { _decorator, CCInteger, Component, find, Game, Node, Vec2, Vec3 } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('SpaceLaser')
 export class SpaceLaser extends Component {
 
-    @property(
+    private manager;
+
+    /*@property(
         {
             type: CCInteger,
             tooltip: 'LaserSpeed'
         }
-    )
+    )*/
     private laserSpeed: number;
+
+    onLoad() {
+        this.manager = find("GameManager").getComponent("GameManager");
+        this.laserSpeed = this.manager.getLaserSpeed();
+    }
     
     start() {
 

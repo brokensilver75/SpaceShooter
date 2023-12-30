@@ -24,6 +24,14 @@ export class GameManager extends Component {
 
     @property (
         {
+            type: CCInteger,
+            tooltip: 'Asteroid speed'
+        }
+    )
+    private asteroidSpeed: number;
+
+    @property (
+        {
             type: RichText,
             tooltip: 'Score'
         }
@@ -36,7 +44,6 @@ export class GameManager extends Component {
             tooltip: 'TargetScore'
         }
     )
-    
     private targetScore: number = 100;
 
     score: number = 0;
@@ -75,6 +82,10 @@ export class GameManager extends Component {
 
     public getLaserSpeed(): number {
         return this.laserSpeed;
+    }
+
+    public getAsteroidSpeed(): number {
+        return this.asteroidSpeed;
     }
 
     addScore() {

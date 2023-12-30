@@ -4,15 +4,15 @@ const { ccclass, property } = _decorator;
 
 @ccclass('Asteroid')
 export class Asteroid extends Component {
-    @property(
+    /*@property(
         {
             type: CCInteger,
             tooltip: 'AsteroidSpeed'
         }
-    )
+    )*/
     private asteroidSpeed: number;
 
-    private game;
+    private manager;
 
     onLoad() {
         let collider = this.getComponent(Collider2D);
@@ -21,7 +21,8 @@ export class Asteroid extends Component {
             collider.on(Contact2DType.BEGIN_CONTACT, this.onContact, this);
         }  
         
-        this.game = find("GameManager").getComponent("GameManager");
+        this.manager = find("GameManager").getComponent("GameManager");
+        this.asteroidSpeed = this.manager.getAsteroidSpeed();
     }
     
     start() {
@@ -40,7 +41,7 @@ export class Asteroid extends Component {
 
         if (otherCollider.name === "SpaceLaser<BoxCollider2D>")
         {
-            this.game.addScore();
+            this.manager.addScore();
             setTimeout(() => {
                 this.node.destroy();
             }, 1);
@@ -52,7 +53,7 @@ export class Asteroid extends Component {
 
         if (otherCollider.name === "Player<BoxCollider2D>")
         {
-            this.game.gameOver();
+            this.manager.gameOver();
         }
 
         
