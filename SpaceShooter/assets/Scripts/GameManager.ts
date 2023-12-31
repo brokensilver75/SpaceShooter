@@ -176,26 +176,10 @@ export class GameManager extends Component {
         return this.asteroidSpawnRate;
     }
 
-    /*public getShieldStatus(): boolean {
-        return this.shieldUp;
-    }*/
-
-    /*public setShieldStatus(status: boolean) {
-        this.shieldUp = status;
-    }*/
-
     public turnshieldOn()
     {
         this.playerShield.active = true;
     }
-
-    /*public instantiateCoin(spawnNode: Node) {
-        this.addScore();
-        var coin = instantiate(this.coinPrefab);
-        //console.log(coin.name);
-        coin.setWorldPosition(spawnNode.getPosition());
-        spawnNode.parent.addChild(coin);
-    }*/
 
     addScore() {
         this.score += 10;
