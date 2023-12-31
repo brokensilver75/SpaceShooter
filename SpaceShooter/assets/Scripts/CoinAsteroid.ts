@@ -59,6 +59,14 @@ export class Asteroid extends Component {
         {
             this.manager.gameOver();
         }
+
+        if (otherCollider.name === "PlayerShield<CircleCollider2D>")
+        {
+            setTimeout(() => {
+                this.instantiateCoin();
+                this.node.destroy();
+            }, 1);
+        }
         
     }
 

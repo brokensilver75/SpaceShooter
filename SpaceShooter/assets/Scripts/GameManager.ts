@@ -70,6 +70,14 @@ export class GameManager extends Component {
     )
     private asteroidSpawnRate: number;
 
+    @property(
+        {
+            type: Node,
+            tooltip: 'PlayerShield'
+        }
+    )
+    private playerShield: Node;
+
     @property (
         {
             type: RichText,
@@ -80,6 +88,7 @@ export class GameManager extends Component {
 
     private score: number = 0;
     private level: number = 1;
+    //private shieldUp: boolean = false;
     //private levelOver: boolean = false;
 
     onLoad() {
@@ -87,6 +96,7 @@ export class GameManager extends Component {
         input.on(Input.EventType.TOUCH_START, this.playerTouched, this);
         input.on(Input.EventType.TOUCH_END, this.playerUnTouched, this);
         this.nextButton.node.on(Input.EventType.TOUCH_START, this.pressToAdvance, this);
+        this.playerShield.active = false;
     }
 
     start() {
@@ -104,17 +114,17 @@ export class GameManager extends Component {
             case 1: 
                 this.laserSpeed = 200;
                 this.asteroidSpeed = 100;
-                this.targetScore = 20;
+                this.targetScore = 200;
                 break;
             case 2: 
                 this.laserSpeed = 200;
                 this.asteroidSpeed = 150;
-                this.targetScore = 50;
+                this.targetScore = 300;
                 break;
             case 3:
                 this.laserSpeed = 200;
                 this.asteroidSpeed = 200;
-                this.targetScore = 100;
+                this.targetScore = 400;
                 break;
         }
     }
@@ -164,6 +174,19 @@ export class GameManager extends Component {
 
     public getSpawnRate(): number {
         return this.asteroidSpawnRate;
+    }
+
+    /*public getShieldStatus(): boolean {
+        return this.shieldUp;
+    }*/
+
+    /*public setShieldStatus(status: boolean) {
+        this.shieldUp = status;
+    }*/
+
+    public turnshieldOn()
+    {
+        this.playerShield.active = true;
     }
 
     /*public instantiateCoin(spawnNode: Node) {
