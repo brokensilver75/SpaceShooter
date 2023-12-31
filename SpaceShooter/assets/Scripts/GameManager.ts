@@ -134,7 +134,7 @@ export class GameManager extends Component {
         if (this.level === 3)
         {
             if (this.score == this.targetScore)
-                this.gameOver();
+                director.loadScene('GameWin');
         }
 
         else if (this.score === this.targetScore)

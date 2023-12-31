@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.SceneAsset",
-    "_name": "GameOver",
+    "_name": "GameWin",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_native": "",
@@ -11,7 +11,7 @@
   },
   {
     "__type__": "cc.Scene",
-    "_name": "GameOver",
+    "_name": "GameWin",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": null,
@@ -56,7 +56,7 @@
     "_globals": {
       "__id__": 23
     },
-    "_id": "73f885bf-1869-428f-8455-b819b604fe07"
+    "_id": "df6882bf-bfa6-4884-9c21-69a04d8ed34a"
   },
   {
     "__type__": "cc.Node",
@@ -120,7 +120,7 @@
       "y": 0,
       "z": 0
     },
-    "_id": "beI88Z2HpFELqR4T5EMHpg"
+    "_id": "b7SOilsQRKq7lnS1ajwTfW"
   },
   {
     "__type__": "cc.Node",
@@ -165,7 +165,7 @@
       "y": 0,
       "z": 0
     },
-    "_id": "ebFwiq8gBFaYpqYbdoDODe"
+    "_id": "5fLuCvjRBJ84ZER1Er6CBc"
   },
   {
     "__type__": "cc.Camera",
@@ -211,7 +211,7 @@
     "_usePostProcess": false,
     "_cameraType": -1,
     "_trackingType": 0,
-    "_id": "63WIch3o5BEYRlXzTT0oWc"
+    "_id": "453NnPwp1BJ684AhNycus+"
   },
   {
     "__type__": "cc.Node",
@@ -259,7 +259,7 @@
       "y": 0,
       "z": 0
     },
-    "_id": "4axxvrLxtHG7JYYOEBkhk3"
+    "_id": "f5ADqKTqRKdbv6V7i0jcuV"
   },
   {
     "__type__": "cc.UITransform",
@@ -281,7 +281,7 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_id": "dbhgeeH4tNyaFg6HvdX72H"
+    "_id": "2d/X4ILO5Gco8ABeI1kh6k"
   },
   {
     "__type__": "cc.Sprite",
@@ -320,7 +320,7 @@
     "_isTrimmedMode": true,
     "_useGrayscale": false,
     "_atlas": null,
-    "_id": "f1aPuL41lA+If++iddoiIi"
+    "_id": "ddM22IoRhNQpghbEy5mlit"
   },
   {
     "__type__": "cc.Node",
@@ -351,7 +351,7 @@
   },
   {
     "__type__": "cc.PrefabInstance",
-    "fileId": "dchJcBdgBJe7LxPQ4+p2++",
+    "fileId": "96P4k7nw1NzIcfo/8TpiBY",
     "prefabRootNode": null,
     "mountedChildren": [],
     "mountedComponents": [],
@@ -435,7 +435,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "GameOver",
+    "_name": "GameEnd",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": {
@@ -479,7 +479,7 @@
       "y": 0,
       "z": 0
     },
-    "_id": "b3tKiRKHdA6q6DpA5KeQvO"
+    "_id": "c3+ul+qfhDop0GgpyY/liv"
   },
   {
     "__type__": "cc.UITransform",
@@ -493,15 +493,15 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 108.92578125,
-      "height": 90.39999999999999
+      "width": 126.481201171875,
+      "height": 50.4
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
       "x": 0.5,
       "y": 0.5
     },
-    "_id": "7dQkchTgBJW4RWYPiRvKGN"
+    "_id": "705iZCzORJHbTOt+9y2C7+"
   },
   {
     "__type__": "cc.RichText",
@@ -514,10 +514,10 @@
     "_enabled": true,
     "__prefab": null,
     "_lineHeight": 40,
-    "_string": "Game\n Over",
+    "_string": "You Win",
     "_horizontalAlign": 0,
     "_verticalAlign": 0,
-    "_fontSize": 40,
+    "_fontSize": 34.3,
     "_fontColor": {
       "__type__": "cc.Color",
       "r": 255,
@@ -533,7 +533,7 @@
     "_cacheMode": 0,
     "_imageAtlas": null,
     "_handleTouchEvent": true,
-    "_id": "cfzz/8VWxJApJTylRgWHAE"
+    "_id": "a51uoJqrlMApY6MiY+XUS4"
   },
   {
     "__type__": "cc.UITransform",
@@ -555,7 +555,7 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_id": "d6rUX5yfhMlKoWX2bSbawx"
+    "_id": "25y7g9UjZOFp5uDFDfn4od"
   },
   {
     "__type__": "cc.Canvas",
@@ -571,7 +571,7 @@
       "__id__": 4
     },
     "_alignCanvasWithScreen": true,
-    "_id": "12O/ljcVlEqLmVm3U2gEOQ"
+    "_id": "f6tTDdXlZAUK0E5HCsABQ7"
   },
   {
     "__type__": "cc.Widget",
@@ -601,13 +601,13 @@
     "_originalHeight": 0,
     "_alignMode": 2,
     "_lockFlags": 0,
-    "_id": "c5V1EV8IpMtrIvY1OE9t2u"
+    "_id": "e0H1+mQrxMnYNSq8taQ5om"
   },
   {
     "__type__": "cc.PrefabInfo",
     "root": null,
     "asset": null,
-    "fileId": "73f885bf-1869-428f-8455-b819b604fe07",
+    "fileId": "df6882bf-bfa6-4884-9c21-69a04d8ed34a",
     "instance": null,
     "targetOverrides": null,
     "nestedPrefabInstanceRoots": [
