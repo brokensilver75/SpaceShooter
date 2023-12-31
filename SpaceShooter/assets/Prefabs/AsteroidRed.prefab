@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.Prefab",
-    "_name": "Asteroid",
+    "_name": "AsteroidRed",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_native": "",
@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Asteroid",
+    "_name": "AsteroidRed",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": null,
@@ -41,7 +41,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 251.974,
+      "x": 256.974,
       "y": 596.859,
       "z": 0
     },
@@ -54,9 +54,9 @@
     },
     "_lscale": {
       "__type__": "cc.Vec3",
-      "x": 0.318,
-      "y": 0.328,
-      "z": 0.376
+      "x": 0.372,
+      "y": 0.383,
+      "z": 0.439
     },
     "_mobility": 0,
     "_layer": 33554432,
@@ -114,8 +114,8 @@
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 255,
-      "b": 255,
+      "g": 92,
+      "b": 92,
       "a": 255
     },
     "_spriteFrame": {

@@ -1,11 +1,9 @@
-import { _decorator, CCInteger, Component, Node, Contact2DType, Collider2D, IPhysics2DContact, RigidBody, RigidBody2D, Game, find, director } from 'cc';
-
+import { _decorator, Collider2D, Component, Contact2DType, find, IPhysics2DContact, Node } from 'cc';
 const { ccclass, property } = _decorator;
 
-@ccclass('Asteroid')
-export class Asteroid extends Component {
-    
-    private asteroidSpeed: number;
+@ccclass('Coin')
+export class Coin extends Component {
+    private coinSpeed: number;
 
     private manager;
 
@@ -17,7 +15,7 @@ export class Asteroid extends Component {
         }  
         
         this.manager = find("GameManager").getComponent("GameManager");
-        this.asteroidSpeed = this.manager.getAsteroidSpeed();
+        this.coinSpeed = this.manager.getAsteroidSpeed();
     }
     
     start() {
@@ -25,7 +23,7 @@ export class Asteroid extends Component {
     }
 
     update(deltaTime: number) {
-        this.node.setPosition(this.node.getPosition().x, this.node.getPosition().y - this.asteroidSpeed * deltaTime);
+        this.node.setPosition(this.node.getPosition().x, this.node.getPosition().y - this.coinSpeed * deltaTime);
         if (this.node.getPosition().y < -480)
         {
             this.node.destroy();
@@ -33,28 +31,16 @@ export class Asteroid extends Component {
     }
 
     onContact(selfCollider:Collider2D, otherCollider:Collider2D, contact:IPhysics2DContact | null) {
-
-        if (otherCollider.name === "SpaceLaser<BoxCollider2D>")
+        
+        if (otherCollider.name === "Player<BoxCollider2D>")
         {
             this.manager.addScore();
             setTimeout(() => {
                 this.node.destroy();
             }, 1);
-            
-            setTimeout(() => {
-                otherCollider.node.destroy();
-            }, 1);
         }
 
-        if (otherCollider.name === "Player<BoxCollider2D>")
-        {
-            this.manager.gameOver();
-        }
-
-        
     }
-
-
 }
 
 

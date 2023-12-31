@@ -1,4 +1,5 @@
-import { _decorator, CCInteger, Component, instantiate, macro, Node, Prefab } from 'cc';
+import { _decorator, Canvas, CCInteger, Component, Game, instantiate, macro, Node, Prefab } from 'cc';
+import { GameManager } from './GameManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('AsteroidSpawner')
@@ -10,7 +11,7 @@ export class AsteroidSpawner extends Component {
             tooltip: 'AsteroidSpawnerSpeed'
         }
     )
-    private asteroidSpawnerSpeed: number = 60;
+    private asteroidSpawnerSpeed;//: number = 60;
 
     @property(
         {
@@ -20,8 +21,17 @@ export class AsteroidSpawner extends Component {
     )
     private asteroid: Prefab;
 
+    @property (
+        {
+            type: GameManager,
+            tooltip: 'Game Manager'
+        }
+    )
+    private manager: GameManager;
+
     onLoad() {
-        this.schedule(this.spawnAsteroid, 3, macro.REPEAT_FOREVER, 0);
+        this.schedule(this.spawnAsteroid, this.manager.getSpawnRate(), macro.REPEAT_FOREVER, 0);
+        this.asteroidSpawnerSpeed = this.manager.getSpawnerSpeed();
     }
 
     start() {
@@ -32,7 +42,7 @@ export class AsteroidSpawner extends Component {
         
         this.node.setPosition(this.node.getPosition().x + this.asteroidSpawnerSpeed * deltaTime, this.node.getPosition().y);
         
-        if (this.node.getPosition().x <= -221 || this.node.getPosition().x >= 221)
+        if (this.node.getPosition().x <= -300 || this.node.getPosition().x >= 300)
         {
             this.asteroidSpawnerSpeed *= -1;
         }

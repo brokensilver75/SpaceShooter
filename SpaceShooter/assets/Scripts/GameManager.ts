@@ -1,4 +1,4 @@
-import { _decorator, Component, EventTouch, Node, ToggleContainer, input, Input, Vec2, CCInteger, Contact2DType, Collider2D, IPhysics2DContact, RichText, director, Vec3 } from 'cc';
+import { _decorator, Component, EventTouch, Node, ToggleContainer, input, Input, Vec2, CCInteger, Contact2DType, Collider2D, IPhysics2DContact, RichText, director, Vec3, Button, CCFloat, Prefab, instantiate } from 'cc';
 import { Player } from './Player';
 
 const { ccclass, property } = _decorator;
@@ -46,18 +46,51 @@ export class GameManager extends Component {
     )
     private targetScore: number = 100;
 
+    @property(
+        {
+            type: Prefab,
+            tooltip: 'CoinPrefab'
+        }
+    )
+    private coinPrefab: Prefab;
+
+    @property(
+        {
+            type: CCInteger,
+            tooltip: 'AsteroidSpawnerSpeed'
+        }
+    )
+    private asteroidSpawnerSpeed: number;
+
+    @property(
+        {
+            type: CCFloat,
+            tooltip: 'AsteroidSpawnRate'
+        }
+    )
+    private asteroidSpawnRate: number;
+
+    @property (
+        {
+            type: RichText,
+            tooltip: 'Next Level'
+        }
+    )
+    private nextButton: RichText;
+
     private score: number = 0;
     private level: number = 1;
-    private levelOver: boolean = false;
+    //private levelOver: boolean = false;
 
     onLoad() {
         input.on(Input.EventType.TOUCH_MOVE, this.changePlayerPos, this);
         input.on(Input.EventType.TOUCH_START, this.playerTouched, this);
         input.on(Input.EventType.TOUCH_END, this.playerUnTouched, this);
+        this.nextButton.node.on(Input.EventType.TOUCH_START, this.pressToAdvance, this);
     }
 
     start() {
-
+        this.nextButton.node.active = false;
     }
 
     update(deltaTime: number) {
@@ -125,6 +158,22 @@ export class GameManager extends Component {
         return this.asteroidSpeed;
     }
 
+    public getSpawnerSpeed(): number {
+        return this.asteroidSpawnerSpeed;
+    }
+
+    public getSpawnRate(): number {
+        return this.asteroidSpawnRate;
+    }
+
+    /*public instantiateCoin(spawnNode: Node) {
+        this.addScore();
+        var coin = instantiate(this.coinPrefab);
+        //console.log(coin.name);
+        coin.setWorldPosition(spawnNode.getPosition());
+        spawnNode.parent.addChild(coin);
+    }*/
+
     addScore() {
         this.score += 10;
         this.scoreText.string = String(this.score);
@@ -146,7 +195,17 @@ export class GameManager extends Component {
     levelAdvance() {
         this.level++;
         this.resetScore();
+        director.pause();
+        this.nextButton.node.active = true;
+
     }
+
+    pressToAdvance()
+    {
+        director.resume();
+        this.nextButton.node.active = false;
+    }
+
 }
 
 

@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.Prefab",
-    "_name": "Asteroid",
+    "_name": "CoinAsteroid",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_native": "",
@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Asteroid",
+    "_name": "CoinAsteroid",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": null,
@@ -41,7 +41,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 251.974,
+      "x": 283.091,
       "y": 596.859,
       "z": 0
     },
@@ -54,9 +54,9 @@
     },
     "_lscale": {
       "__type__": "cc.Vec3",
-      "x": 0.318,
-      "y": 0.328,
-      "z": 0.376
+      "x": 0.188,
+      "y": 0.193,
+      "z": 0.222
     },
     "_mobility": 0,
     "_layer": 33554432,
@@ -113,9 +113,9 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 243,
+      "g": 253,
+      "b": 0,
       "a": 255
     },
     "_spriteFrame": {
@@ -142,24 +142,6 @@
     "fileId": "e17uvXF6pEfb8FUw5YB4dH"
   },
   {
-    "__type__": "9ab9bUIV/dGeKadHq8EdJiK",
-    "_name": "",
-    "_objFlags": 0,
-    "__editorExtras__": {},
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "__prefab": {
-      "__id__": 7
-    },
-    "_id": ""
-  },
-  {
-    "__type__": "cc.CompPrefabInfo",
-    "fileId": "e4xwMnhwRKtaV+7wFhJtb8"
-  },
-  {
     "__type__": "cc.BoxCollider2D",
     "_name": "",
     "_objFlags": 0,
@@ -169,7 +151,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 9
+      "__id__": 7
     },
     "tag": 0,
     "_group": 1,
@@ -203,7 +185,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 11
+      "__id__": 9
     },
     "enabledContactListener": true,
     "bullet": false,
@@ -226,6 +208,28 @@
   {
     "__type__": "cc.CompPrefabInfo",
     "fileId": "c8hHffTPNFeb4Je/HLY5SL"
+  },
+  {
+    "__type__": "e09c89q0vRLlLgN+yq4QWuq",
+    "_name": "",
+    "_objFlags": 0,
+    "__editorExtras__": {},
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 11
+    },
+    "coinPrefab": {
+      "__uuid__": "fd17ac66-ba7b-46dd-bba8-888429f2ce75",
+      "__expectedType__": "cc.Prefab"
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "66X47/uzJI6qjEmE2LmCGI"
   },
   {
     "__type__": "cc.PrefabInfo",

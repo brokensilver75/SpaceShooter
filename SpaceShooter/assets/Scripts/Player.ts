@@ -6,7 +6,7 @@ export class Player extends Component {
 
     public newPos: Vec2;
     public playerTouched: boolean = false;
-
+    
     @property(
         {
             type: Prefab,
@@ -16,7 +16,7 @@ export class Player extends Component {
     private spaceLaser: Prefab;
 
     onCollisionEnter() {
-        
+
     }
 
     onLoad() {

@@ -1,10 +1,18 @@
-import { _decorator, CCInteger, Component, Node, Contact2DType, Collider2D, IPhysics2DContact, RigidBody, RigidBody2D, Game, find, director } from 'cc';
+import { _decorator, CCInteger, Component, Node, Contact2DType, Collider2D, IPhysics2DContact, RigidBody, RigidBody2D, Game, find, director, Prefab, instantiate } from 'cc';
 
 const { ccclass, property } = _decorator;
 
-@ccclass('Asteroid')
+@ccclass('CoinAsteroid')
 export class Asteroid extends Component {
     
+    @property (
+        {
+            type: Prefab,
+            tooltip: 'CoinPrefab'
+        }
+    )
+    private coinPrefab: Prefab;
+
     private asteroidSpeed: number;
 
     private manager;
@@ -38,6 +46,7 @@ export class Asteroid extends Component {
         {
             this.manager.addScore();
             setTimeout(() => {
+                this.instantiateCoin();
                 this.node.destroy();
             }, 1);
             
@@ -50,8 +59,13 @@ export class Asteroid extends Component {
         {
             this.manager.gameOver();
         }
-
         
+    }
+
+    instantiateCoin() {
+        var coin = instantiate(this.coinPrefab);
+        coin.setWorldPosition(this.node.getPosition());
+        this.node.parent.addChild(coin);
     }
 
 
