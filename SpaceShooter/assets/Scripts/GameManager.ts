@@ -86,10 +86,17 @@ export class GameManager extends Component {
     )
     private nextButton: RichText;
 
+    @property (
+        {
+            type: RichText,
+            tooltip: 'Level'
+        }
+    )
+    private levelText: RichText;
+
     private score: number = 0;
     private level: number = 1;
-    //private shieldUp: boolean = false;
-    //private levelOver: boolean = false;
+    
 
     onLoad() {
         input.on(Input.EventType.TOUCH_MOVE, this.changePlayerPos, this);
@@ -106,6 +113,7 @@ export class GameManager extends Component {
     update(deltaTime: number) {
         this.levelWin();
         this.adjustLevelStats();
+        this.levelText.string = String('LEVEL: ' + this.level);
     }
 
     adjustLevelStats() {

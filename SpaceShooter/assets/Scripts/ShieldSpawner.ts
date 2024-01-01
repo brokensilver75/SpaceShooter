@@ -31,7 +31,7 @@ export class CoinAsteroidSpawner extends Component {
     private manager: GameManager;
     
     onLoad() {
-        this.schedule(this.spawnShield, 3, macro.REPEAT_FOREVER, 0);
+        this.schedule(this.spawnShield, 10, macro.REPEAT_FOREVER, 0);
     }
 
     start() {

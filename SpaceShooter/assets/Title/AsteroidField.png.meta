@@ -1,0 +1,134 @@
+{
+  "ver": "1.0.26",
+  "importer": "image",
+  "imported": true,
+  "uuid": "80133f73-ba3a-4580-b95c-a5b531e5952c",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "80133f73-ba3a-4580-b95c-a5b531e5952c@6c48a",
+      "displayName": "AsteroidField",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "clamp-to-edge",
+        "wrapModeT": "clamp-to-edge",
+        "imageUuidOrDatabaseUri": "80133f73-ba3a-4580-b95c-a5b531e5952c",
+        "isUuid": true,
+        "visible": false,
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f9941": {
+      "importer": "sprite-frame",
+      "uuid": "80133f73-ba3a-4580-b95c-a5b531e5952c@f9941",
+      "displayName": "AsteroidField",
+      "id": "f9941",
+      "name": "spriteFrame",
+      "userData": {
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": -12,
+        "offsetY": 33,
+        "trimX": 301,
+        "trimY": 61,
+        "width": 1294,
+        "height": 892,
+        "rawWidth": 1920,
+        "rawHeight": 1080,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
+        "packable": true,
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [
+            -647,
+            -446,
+            0,
+            647,
+            -446,
+            0,
+            -647,
+            446,
+            0,
+            647,
+            446,
+            0
+          ],
+          "indexes": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            3
+          ],
+          "uv": [
+            301,
+            1019,
+            1595,
+            1019,
+            301,
+            127,
+            1595,
+            127
+          ],
+          "nuv": [
+            0.15677083333333333,
+            0.1175925925925926,
+            0.8307291666666666,
+            0.1175925925925926,
+            0.15677083333333333,
+            0.9435185185185185,
+            0.8307291666666666,
+            0.9435185185185185
+          ],
+          "minPos": [
+            -647,
+            -446,
+            0
+          ],
+          "maxPos": [
+            647,
+            446,
+            0
+          ]
+        },
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "80133f73-ba3a-4580-b95c-a5b531e5952c@6c48a",
+        "atlasUuid": ""
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "type": "sprite-frame",
+    "hasAlpha": true,
+    "fixAlphaTransparencyArtifacts": false,
+    "redirect": "80133f73-ba3a-4580-b95c-a5b531e5952c@f9941"
+  }
+}
