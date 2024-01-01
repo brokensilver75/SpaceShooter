@@ -122,17 +122,17 @@ export class GameManager extends Component {
             case 1: 
                 this.laserSpeed = 200;
                 this.asteroidSpeed = 100;
-                this.targetScore = 200;
+                this.targetScore = 350;
                 break;
             case 2: 
                 this.laserSpeed = 200;
                 this.asteroidSpeed = 150;
-                this.targetScore = 300;
+                this.targetScore = 550;
                 break;
             case 3:
                 this.laserSpeed = 200;
                 this.asteroidSpeed = 200;
-                this.targetScore = 400;
+                this.targetScore = 750;
                 break;
         }
     }
