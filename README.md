@@ -1,4 +1,4 @@
-# SpaceShooter
+# Asteroid Fiield
 
 How to play the game:
 Tap/Click PLAY to start the game.
