@@ -1,4 +1,4 @@
-# Asteroid Fiield
+# Asteroid Field
 
 How to play the game:
 Tap/Click PLAY to start the game.
